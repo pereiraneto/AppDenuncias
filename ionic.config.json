@@ -1,5 +1,7 @@
 {
   "name": "ocorrencias",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

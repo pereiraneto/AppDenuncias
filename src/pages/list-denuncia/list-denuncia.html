@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <ion-title>
+      App Ocorrências
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-list-header>
+      <h2 text-center>Lista de Denúncias</h2>
+      </ion-list-header>
+      <ion-item *ngFor="let denuncia of denuncias">
+      <ion-thumbnail item-start>
+          <img [src]="denuncia.imagem.imagem">
+      </ion-thumbnail>
+      <h3>{{denuncia.email}}</h3>
+      <p>{{denuncia.motivo_ocorrencia}}</p>
+      </ion-item>
+  </ion-list>
+  <ion-fab bottom right>
+      <button color="secondary" ion-fab navPush="AddDenunciaPage"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+    

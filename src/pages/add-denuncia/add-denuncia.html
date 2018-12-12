@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Adicionar Denuncia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list text-center>
+    <ion-list-header>
+      <h2>Cadastrar uma Denúncia</h2>
+    </ion-list-header>
+      <ion-item>
+        <ion-label>Motivo</ion-label>
+        <ion-select [(ngModel)]="denuncia.motivo_ocorrencia">
+          <ion-option value="roubo">ROUBO</ion-option>
+          <ion-option value="furto">FURTO</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="email" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            <img src="{{imagem}}">
+          </ion-card-header>
+          <ion-card-content>
+            <button ion-button (click)="takePicture()">Tirar foto</button>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+  </ion-list>
+  <button ion-button block color="secondary" (click)="cadastrarDenuncia()">Salvar Denúncia</button>
+</ion-content>

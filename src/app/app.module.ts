@@ -6,25 +6,35 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DenunciaProvider } from '../providers/denuncia/denuncia';
+
+import { Camera } from '@ionic-native/camera'
+import { HttpModule } from '@angular/http';
+import { ListDenunciaPage } from '../pages/list-denuncia/list-denuncia';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ListDenunciaPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ListDenunciaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DenunciaProvider, 
+    Camera
   ]
 })
 export class AppModule {}
